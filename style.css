@@ -1,0 +1,182 @@
+body{ /* najpeirw dajemy znaczniki ogólne*/
+    margin: 0 !important;  /*usuwamy domyslne maringesy z body!!!*/
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%; /* 100% maksymalnej szerokości nadrzędnego elementu diva/body itp.*/
+    display: block; /*dzieki przestawieniu trybu wyswietlania z inline (tekstowy?) na blokowy display: block pozwala nam to uniknac malenkiej przerwy miedzy obrazkiem a polem z tekstem*/
+}
+
+ul#main-menu { /*Mozemy przed nazwa #id podac rowniez nazwe elementu np ul#id zeby bybylo wiadomo o jaki element chodzi - jest to opcjonalne*/
+    margin: 10px 0 0 0; /*odsuwamy torchę main menu od loga na gorze - dajemy 20px marginesu z gory a z prawej, dolu i lewej po 0 tak, ze powstanie dodatkowa przestrzen pomiedzy Logo a Main-Menu*/
+    /* okreslanie maring, padding i inncyh co posiadaja wymiary: np. margin: Ypx - Y dla wszystkiego gora, prawo, dol, lewo; margin: Ypx Zpx - Ypx gora i dol, Zpx lewo i prawo*/
+    padding: 0;
+    list-style: none;
+    display: flex; /* Zamiast float: left i clear: both. Od HTML5 znacznie ułatwia nam pozycjonowanie elementow*/
+    flex-wrap: wrap; /*Make the flexible items wrap if necessary*/
+}
+
+ul#main-menu li {
+    flex-grow: 1; /* rośnięcie elemntów = 1 tj. Kazdy element jest rowny sobie z W3C: The flex-grow property specifies how much the item will grow relative to the rest of the flexible items inside the same container.*/
+}
+
+ul#main-menu li a { /*styluje nam <a></a> ktore jest wewnatrz <li> ktore jest wewnatrz <ul> #main-menu */
+    color: whitesmoke;
+}
+
+#main-nav {
+    text-align: center;
+    padding: 10px; /* dla margin, padding: jedna wartosc = margin z kazdej strony, 2 wartosci gora-dol + lewo-prawo, 4 wartosci gora, prawo, dol, lewo*/
+    background-color: steelblue;
+    color: whitesmoke;
+}
+
+#main-logo {
+    font-size: 24px;
+    font-weight: bold; /*400 normal 600/700/800 grubiej - textowo = bold = podkreslenie*/
+    color: whitesmoke;
+}
+
+#main-header {
+    text-align: center;
+    background-image: url("background-min.jpg"); /*we use url(); function to add the img path which will be used as backround img url can be wrapped by " " or ' '*/
+    background-size: cover; /*Ta walasciowsc pozwala nam nam wypelnic caly element wybranym obrazem / moze byc rozciagniety lub czesciowo uciety*/
+    background-position: center; /*Dzieki tej wlaciwosci obrazek przy wypelniniu diva zostanie wysrodkowany i przyciety dookola, a nie np diva wypelni jego gorna czesc a uciete zostanie 3/4 obrazka od dolu*/
+    padding: 80px 20px;
+}
+
+#main-header h1 {
+    margin: 0; /* aby divy np naglowek navbar i obrazek sie stykaly usuwamy domysle maringesy natomaist aby tekst byl w wysrodkowany dodajem padding*/
+    /*padding: 20px; - przenosimy to do #main-header tak aby wszystkie elemnty miały pdding: 20px;*/
+}
+
+#main-section {
+    padding: 20px; /* PADDING W #main-section POWODUJE ODSTEP 20px MIEDZY KRAWEDZIA #main-section a TEXTEM I OBRAZKAMI zawartymi w article*/
+    background-color: #282e38;
+    color: whitesmoke;
+}
+
+#main-section h2 {
+    color: #70a7ff;
+}
+
+#main-section article {
+    margin-bottom: 60px;
+}
+
+#main-sidebar {
+    background-color: #4e5560;
+    padding: 20px;
+}
+
+#main-sidebar h2 {
+    color: silver;
+    text-align: center;
+    margin: 0 0 20px 0;
+    border-bottom: 1px dashed silver;
+    padding-bottom: 15px;
+}
+
+#main-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-sidebar ul li {
+    clear: both; /* czysci nam oplywanie w okol obrazkow w kazdym z <li> w innym wypadku przy ulozeniu urzadzenia mobilnego w pozycji poziomej obrazki i teskt jak schodki zachodzily by jeden pod drugi */
+} /* w iny wypadku elementy <li> rowniez beda staraly sie oplywac w okolo obrazka, zamiast ustawiac sie jeden pod drugim*/
+
+#main-sidebar ul li a {
+    color: black;
+
+}
+
+#main-sidebar ul li a img {
+    float: left; /*oplywanie, uzywamy do przesuniecia danego elemtu do dajen storny natomiast inne elementy, text beda go oplywac z 2giej np. float: left obrazek po lewej inne rzeczy po prawej stronie elemntu, pod elementem, nad itp (dookola) - float: right; na odwrot*/
+    /*float left spowoduje nam przy pozolzenia telefonu pozimo, ze zdjecia te i tekst jak schodki beda wchodzic jedno pod drugie, aby tego uniknac: dodajemy do kazdego z elementow <li> claer: both; */
+    margin: 0 10px 5px 0; /*z tego wzgledu, ze ze teraz po uzyciu float: left; txt bedzie przylegal (tak jak i inne elementy)  do naszego obrazka, dodajemy margines aby sie ze soba nie stykaly. Dolny zostaiwmy na 5 aby text ktory sie zawinie 'pod obrazek' nie odstawala za bardzo po zdjeciem */
+}
+
+#main-sidebar p {
+    color: silver;
+}
+
+#main-sidebar h3 {
+    font-size: 14px;
+    color: whitesmoke;
+}
+
+@media (min-width: 760px) { /*@media Rule - te style zostaną wprowadzone DOPIERO gdy szerokosc ekranu wyiesie MINIMUM 760px - mozna ustawi np max-width co spowoduje ze dane styl beda obowiazywa DOPOKI szer. ekranu jest nie wieksza niz max-width: num*/
+    #main-nav {
+        display: flex; /*elemnty takie jak <a> czy <ul> (brane sa pod uwage TYLKO elementy występujace BEZPOSREDNIO w PIERWSZYM ZAGNIEZDZENIU 
+        w tym elemencie #main-nav czyli <li> nie sa tu brane pod uwage)zostaną wyswietlone obok siebie*/
+        align-items: center; /*WYŚRODKUJ elementy WZGLĘDEM SIEBIE*/
+        justify-content: space-between; /*justify-content: Make some space around the items of the flexible <div> element
+        space-around: flex elements are distribiuted evenly in the line*/
+    }
+
+    #main-menu {
+        margin: 0;  /*Aby elementy Pozycja1 Pozycja2... (#main-menu)  w naszym nav-barze (#main-nav) nie byly przesuniete zbyt w dol 
+        - ustawiamy w #main-menu margin: 0; na zero a align-items: center - sprawi ze elemety #main0menu nie beda przesuniete zbyt wysoko*/
+    }
+
+    #main-menu li {
+        margin-left: 15px; 
+    }
+
+    #main-menu li a:hover {
+        text-decoration: underline;
+    }
+
+    #main-header {
+        padding: 200px 20px;
+    }
+
+    #main-header h1 {
+        font-size: 60px;
+    }
+
+    #main-wrapper {
+        display: flex;
+    }
+
+    #main-section {
+        width: 70%;
+    }
+
+    #main-sidebar {
+        width: 30%;
+    }
+
+    #main-container { /*Dzieki temu zabiegowi po zbytnim oddaleniu lub posiadania za duzej szerokosci ekranu ekran pozostanie w formie okna o max zerokosci max iwdth i wszystkie elementy w nim pozostana proporcjonalne*/
+        max-width: 1366px;;
+        margin: 0 auto; /*0top-bottom auto-right-left - Maring left i right: margines gora dol nie zadziala jako auto; zostanie wycentrowana w plaszczyznie horyzontalnej*/
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*@media (min-width: 760px) { /* Minimalna szerokość 760 tzn. od 760 w górę czyli dla ekranów większych - np. tablety
+    nav{
+        border-color: blue;
+    }
+}
+
+@media (min-width: 1200px) { /* min 1200 - desktopy
+    nav{
+        border-color: green;
+    }
+}*/

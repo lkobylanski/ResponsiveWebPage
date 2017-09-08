@@ -1,0 +1,95 @@
+<!DOCTYPE html> <!-- KOntynuuj lekcja 8 27min!-->
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- initial-scale=1 1 jest odpowienide ale ustawiamy je dla pewnosci aby urzadzenie nie przeskalowalo do np. 2 i wtedy beda nam wyjezdzac poza ekran-->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Jezeli nie ma tego tagu to element bedzie sie skalowac do rozmairu ekranu - tak jak oddalanie / zblizanie ekranu na PC - po wprowadznieu tego tagu elemnty ofc zmieniaja swoej style wedlug @media Rule aczkolwiek rozmiar np height w px pozostanie ten sam!-->
+    <title>Projekt mobile first</title> <!-- W innym wypadku (brak tagu <meta name="vieport"...) cala strona bedzie wygladac tak samo jak na PC tylko bedzie odpowiednio POMNIEJSZONA - ODDALONA natomiast ten tag pozwala nam zachowac naturlany rozmiar elementow a ich ukladem zajmie sie CSS po rozpoznaniu rozmiaru ekrany @media!-->
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+        <!--tutaj dodajemy tag style jezeli style.css nie jest w osobnym pliku-->
+</head>
+
+<body>
+    <div id="main-container">
+        <nav id="main-nav">
+        
+        <a id="main-logo" href="index.html"> Logo </a>
+
+            <ul id="main-menu">
+                <li><a href = "">pozycja1</a></li>
+                <li><a href = "">pozycja2</a></li>
+                <li><a href = "">pozycja3</a></li>
+                <li><a href = "">pozycja4</a></li>
+            </ul>
+
+        </nav>
+
+        <header id="main-header">
+
+            <h1>
+                Anim sint adipisicing enim ad esse. Nulla duis voluptate dolore tempor. 
+            </h1>
+
+        </header>
+
+        <div id="main-wrapper">
+            <main id="main-section">
+                <article title="Margines widoczny wokol artykulu i obrazka jest powodowany przez #main section {padding: 20px;}">
+                    <a href="#">
+                        <img src="http://lorempixel.com/1366/768/nature/2" alt="Nature picture">
+                        <h2>Adipisicing occaecat occaecat cillum excepteur ex cillum occaecat eiusmod nisi qui.</h2>
+                    </a>
+                    <p>Quis pariatur eu esse fugiat magna excepteur id minim aliquip aute. Dolore laborum ut dolore exercitation eiusmod dolor ipsum consequat cillum. Laboris aute sit eiusmod anim nostrud id pariatur adipisicing duis culpa. Lorem officia mollit exercitation velit aliquip aliquip est nulla aliquip eu. Consectetur Lorem amet veniam labore non magna aute.</p>
+                </article>
+                <article>
+                    <a href="#">
+                        <img src="http://lorempixel.com/1366/768/nature/4" alt="Nature picture">
+                        <h2>Adipisicing occaecat occaecat cillum excepteur ex cillum occaecat eiusmod nisi qui.</h2>
+                    </a>
+                    <p>Quis pariatur eu esse fugiat magna excepteur id minim aliquip aute. Dolore laborum ut dolore exercitation eiusmod dolor ipsum consequat cillum. Laboris aute sit eiusmod anim nostrud id pariatur adipisicing duis culpa. Lorem officia mollit exercitation velit aliquip aliquip est nulla aliquip eu. Consectetur Lorem amet veniam labore non magna aute.</p>
+                </article>
+            </main>
+
+            <aside id="main-sidebar"> <!--Tresc poboczna - powinna byc powiazana z otaczajaca ja tresica/tresciami-->
+                <h2>Most Popular:</h2>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img  src="http://lorempixel.com/80/80/nature/8" alt="Nature picture">
+                            <h3>
+                                Dolore mollit eu est tempor labore officia veniam est ea eiusmod ullamco. 
+                            </h3>
+
+                            <p>02/02/2015</p>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img  src="http://lorempixel.com/80/80/nature/3" alt="Nature picture">
+                            <h3>
+                                Dolore mollit eu est tempor labore officia veniam est ea eiusmod ullamco. 
+                            </h3>
+
+                            <p>01/06/2016</p>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img  src="http://lorempixel.com/80/80/nature/1" alt="Nature picture">
+                            <h3>
+                                Dolore mollit eu est tempor labore officia veniam est ea eiusmod ullamco. 
+                            </h3>
+                            <p>12/08/2017</p>
+                        </a>
+                    </li>               
+                </ul>
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>
